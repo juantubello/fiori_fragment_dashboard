@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+	<Dialog contentWidth="55%" resizable="false" title="Dashboard Gerencial">
+		<content>
+			<f:Form editable="true">
+				<f:title>
+					<core:Title text="Filtros"/>
+				</f:title>
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+						emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Centro" visible="true">
+								<f:fields>
+									<Input placeholder="Centro" value="{/rowsFilter/Centro}"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Clase pedido" visible="true">
+								<f:fields>
+									<VBox>
+										<items>
+											<MultiComboBox  showSecondaryValues= "true" items="{path: '/rowsFilter/rowsClaseDoc'}" selectedKeys="{/rowsFilter/selectClaseDoc}">
+												<core:ListItem key="{ClaseDocumento}" text="{Descripcion}" additionalText="{ClaseDocumento}"/>
+											</MultiComboBox>
+										</items>
+									</VBox>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Fecha Desde" visible="true">
+								<f:fields>
+									<DatePicker placeholder="Fecha Desde" value="{/rowsFilter/FechaDesde}" valueFormat="dd-MM-yyyy" change="handleChange"
+										class="sapUiSmallMarginBottom"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Fecha Hasta" visible="true">
+								<f:fields>
+									<DatePicker placeholder="Fecha Hasta" value="{/rowsFilter/FechaHasta}" valueFormat="dd-MM-yyyy" change="handleChange"
+										class="sapUiSmallMarginBottom"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+		<beginButton>
+			<Button type="Accept" text="Buscar" press="onPressFilter"/>
+		</beginButton>
+		<endButton>
+			<Button type="Reject" text="Cerrar" press="onPressCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

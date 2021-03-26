@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data">
+	<!--<viz:VizFrame id="vizFrameMetaDespacho" uiConfig="{applicationSet:'fiori'}" width='100%' height='280px' vizType='treemap'-->
+	<viz:VizFrame id="vizFrameMetaDespacho" uiConfig="{applicationSet:'fiori'}" width='100%' height='280px' vizType='column'
+		selectData="selectColumnData">
+		<viz:dataset>
+			<viz.data:FlattenedDataset data="{/rowsMetaDespacho}">
+				<viz.data:dimensions>
+					<viz.data:DimensionDefinition name="Cantidad" value="{Transporte}"/>
+					<!--<viz.data:DimensionDefinition name="ChapaCamion" value="{ChapaCamion}"/>-->
+				</viz.data:dimensions>
+				<viz.data:measures>
+					<viz.data:MeasureDefinition name="Minutos" value="{ChapaCamion}"/>
+					<!--<viz.data:MeasureDefinition name="Cantidad" value="{Transporte}"/>-->
+				</viz.data:measures>
+			</viz.data:FlattenedDataset>
+		</viz:dataset>
+		<viz:feeds>
+			<!--<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Cantidad"/>-->
+			<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Minutos"/>
+			<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Cantidad"/>
+			<!--<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="ChapaCamion"/>-->
+		</viz:feeds>
+	</viz:VizFrame>
+</core:FragmentDefinition>

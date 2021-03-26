@@ -1,0 +1,41 @@
+<core:View controllerName="zdashboardgcial.zdashboardgcial.controller.Main" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table"
+	xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:vm="sap.ui.comp.variants" xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data" xmlns:tnt="sap.tnt">
+	<Page id="dynamicPageId" title="{i18n>title}" class="marginBoxContent">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="Dashboard Gerencial" level="H2"/>
+				<Button icon="sap-icon://filter" type="Transparent" press="onPressFilter" ariaLabelledBy="editButtonLabel"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<layout:FixFlex minFlexSize="250">
+			<layout:flexContent>
+				<VBox>
+					<form:SimpleForm maxContainerCols="2" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+						emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+						<core:Fragment fragmentName="zdashboardgcial.zdashboardgcial.view.fragment.GraficoTiempoCiclo" type="XML"/>
+						<core:Fragment fragmentName="zdashboardgcial.zdashboardgcial.view.fragment.GraficoMetaDespacho" type="XML"/>
+					</form:SimpleForm>
+					<form:SimpleForm maxContainerCols="2" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+						emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+						<core:Fragment fragmentName="zdashboardgcial.zdashboardgcial.view.fragment.GraficoCapacidadOciosa" type="XML"/>
+						<core:Fragment fragmentName="zdashboardgcial.zdashboardgcial.view.fragment.GraficoCapacidadOciosaTon" type="XML"/>
+					</form:SimpleForm>
+					<form:SimpleForm maxContainerCols="2" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+						emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2">
+						<core:Fragment fragmentName="zdashboardgcial.zdashboardgcial.view.fragment.GraficoAlistadoTransportes" type="XML"/>
+						<core:Fragment fragmentName="zdashboardgcial.zdashboardgcial.view.fragment.Timer" type="XML"/>
+					</form:SimpleForm>
+					<viz:Popover id="popOverTiempoCiclo"></viz:Popover>
+					<viz:Popover id="popOverMetaDespacho"></viz:Popover>
+					<viz:Popover id="popOverCapacidadOciosa"></viz:Popover>
+					<viz:Popover id="popOverCapacidadOciosaTon"></viz:Popover>
+					<viz:Popover id="popOverAlistadoTransportes"></viz:Popover>
+				</VBox>
+			</layout:flexContent>
+		</layout:FixFlex>
+	</Page>
+</core:View>

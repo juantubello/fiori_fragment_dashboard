@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt">
+	<l:VerticalLayout class="sapUiContentPadding" width="100%">
+		<ObjectStatus id="timer" class="sapMObjectStatusLarge" title="Auto Refresh In" text="14:45:70" icon="sap-icon://message-information"
+			state="Information"/>
+		<ObjectStatus id="Centro" class="sapMObjectStatusLarge" title="Centro" text="" icon="sap-icon://filter" state="Information"/>
+		<ObjectStatus id="FechaDesde" class="sapMObjectStatusLarge" title="Fecha Desde" text="" icon="sap-icon://filter" state="Information"/>
+		<ObjectStatus id="FechaHasta" class="sapMObjectStatusLarge" title="Fecha Hasta" text="" icon="sap-icon://filter" state="Information"/>
+	</l:VerticalLayout>
+</core:FragmentDefinition>
